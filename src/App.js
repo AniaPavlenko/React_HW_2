@@ -55,7 +55,7 @@ function App() {
   const reset = () => {
     clearInterval(interv);
     setStatus(0);
-    setStoppedTime(saveTime());
+    saveTime();
     setTime({ ms: 0, s: 0, m: 0, h: 0 });
   };
 
@@ -72,11 +72,11 @@ function App() {
         resume={resume}
       />
 
-      <ul className="stopped-time">
+      <div className="stopped-time">
         {stoppedTime.map((val, index) => {
-          return <li key={index.toString()}>{val}</li>;
+          return <p key={index.toString()}>{val}</p>;
         })}
-      </ul>
+      </div>
     </div>
   );
 }
